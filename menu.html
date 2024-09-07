@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="shortcut icon" href="chef 1.png" type="image/x-icon">
+    <title>Gray Restaurant | Menu Page</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-image: url(background\ 2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    .header {
+        background-color: black;
+        color: white;
+        height: 100px;
+        border-bottom: 7px solid darkgreen;
+    }
+    
+    .header .head-text {
+        font-size: 33px;
+        font-weight: bold;
+        line-height: 95px;
+        margin-left: 60px;
+    }
+    
+    .header .head-img {
+        line-height: 50px;
+        position: relative;
+        margin-left: 20px;
+    }
+    
+    .header .head-img img {
+        margin-top: 28px;
+        position: absolute;
+    }
+    
+    .header ul {
+        float: right;
+        line-height: 70px;
+        margin-right: 50px;
+    }
+    
+    .header ul li {
+        display: inline-block;
+        margin: 0px 10px;
+        padding: 0px 14px;
+        transition: all .5s;
+    }
+    
+    .header ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    
+    .header ul li.active {
+        background-color: #09250dc5;
+    }
+    
+    .header ul li:hover {
+        background-color: #116e1cc5;
+    }
+    
+    .checkbtn {
+        font-size: 17px;
+        color: green;
+        background-color: #fff;
+        padding: 1px 8px;
+        border-radius: 4px;
+        float: right;
+        margin-top: 30px;
+        margin-right: 50px;
+        display: none;
+    }
+    
+    #check {
+        display: none;
+    }
+    
+    @media screen and (max-width: 720px) {
+        .header ul {
+            background-color: rgba(3, 56, 3, 0.781);
+            backdrop-filter: blur(20px);
+            width: 90%;
+            height: 100vh;
+            margin-top: -2px;
+            position: absolute;
+            left: -100%;
+            transition: all .7s;
+            display: block;
+            margin: auto;
+        }
+        .header ul li {
+            display: block;
+            margin: auto;
+            text-align: center;
+            margin: 30px 0px;
+            list-style: none;
+            margin-left: -38px;
+            transition: all .5s;
+        }
+        .header ul li:hover {
+            background-color: black;
+        }
+        .header .head-text {
+            font-size: 20px;
+        }
+        #check:checked~ul {
+            left: 0;
+        }
+        .checkbtn {
+            display: block;
+        }
+        .header .head-img img {
+            height: 40px;
+        }
+    }
+    
+    @media screen and (max-width: 400px) {
+        .header .head-img img {
+            display: none;
+        }
+        .header .head-text {
+            margin-left: 5px;
+        }
+    }
+    
+    .label {
+        background-color: rgba(255, 255, 0, 0.281);
+        padding: 5px 0px;
+        margin-top: 20px;
+        text-align: center;
+        color: white;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.87);
+    }
+    
+    .product-hold {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    
+    .body {
+        background-color: rgba(0, 0, 0, 0.795);
+        padding: 20px 0px;
+    }
+    
+    .hold {
+        background-color: #fff;
+        width: 210px;
+        padding: 20px;
+        text-align: center;
+        margin: 20px 30px;
+        border-radius: 5px;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        transition: all .5s;
+    }
+    
+    .hold:hover {
+        transform: translateY(5px);
+        cursor: pointer;
+    }
+    
+    .hold .img-hold {
+        width: 130px;
+        display: block;
+        margin: auto;
+    }
+    
+    .hold .img-hold img {
+        display: block;
+        margin: auto;
+    }
+    
+    .hold p {
+        color: darkgreen;
+        font-size: 19px;
+        margin-top: -14px;
+        font-weight: bold;
+    }
+    
+    .hold button {
+        padding: 10px;
+        width: 70%;
+        background-color: black;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        transition: all .5s;
+    }
+    
+    .hold button:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    
+    .backbtn {
+        height: 43px;
+        width: 43px;
+        background-color: green;
+        border-radius: 50%;
+        border: none;
+        top: 90%;
+        left: 85%;
+        position: fixed;
+        color: white;
+        font-size: 18px;
+    }
+    
+    footer {
+        background-color: rgb(1, 65, 1);
+        color: white;
+        padding: 2px 0px;
+        font-size: 21px;
+        font-weight: bold;
+    }
+    
+    footer p {
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+    <nav class="header">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+        <label class="head-img"><img src="logo.png" height="40px"></label>
+        <label class="head-text">Gray Land Restaurant</label>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="active">
+                <a href="menu.html">Menus</a>
+            </li>
+            <li>
+                <a href="service.html">Services</a>
+            </li>
+            <li>
+                <a href="about.html">About us</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="body">
+        <div class="label">
+            <h1>List of Our Menu</h1>
+        </div>
+
+        <div class="product-hold">
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="burger3.jpg" width="100%">
+                </div>
+                <h2>Burger Meal</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="burger3.jpg" width="100%">
+                </div>
+                <h2>Burger Meal</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="burger3.jpg" width="100%">
+                </div>
+                <h2>Burger Meal</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="burger3.jpg" width="100%">
+                </div>
+                <h2>Burger Meal</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+
+        <div class="product-hold">
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="chicken 1.jpg" width="100%">
+                </div>
+                <h2>Fried Chicken </h2>
+                <p>Price: $5.00</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="chip 1.jfif" width="100%">
+                </div>
+                <h2>Chips & Chicken</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="chicken 1.jpg" width="100%">
+                </div>
+                <h2>Fried Chicken</h2>
+                <p>Price: $5.00</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="chip 2.png" width="100%">
+                </div>
+                <h2>Chips & Chicken</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+
+        </div>
+
+
+        <div class="product-hold">
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="rice & chicken 2.png" width="100%">
+                </div>
+                <h2>Burger Meal</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="rice & chicken.png" width="100%">
+                </div>
+                <h2>Burger Meal</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="chipchick.png" width="100%">
+                </div>
+                <h2>Burger Meal</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+
+            <div class="hold">
+                <div class="img-hold">
+                    <img src="chicken 3.png" width="100%">
+                </div>
+                <h2>Burger Meal</h2>
+                <p>Price: $3.00</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <a href="#"><button class="backbtn"><i class="fas fa-arrow-up-long"></i></button></a>
+    <footer>
+        <p>Gray Land Restaurant &copy;</p>
+    </footer>
+</body>
+
+</html>
+
+</html>
+
+</html>

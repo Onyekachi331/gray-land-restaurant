@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="chef 1.png" type="image/x-icon">
+    <title>Gray Restaurant | Service Page</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background-image: url(back1.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .header {
+        background-color: black;
+        color: white;
+        height: 100px;
+        border-bottom: 7px solid darkgreen;
+    }
+    
+    .header .head-text {
+        font-size: 33px;
+        font-weight: bold;
+        line-height: 100px;
+        margin-left: 60px;
+    }
+    
+    .header .head-img {
+        line-height: 50px;
+        position: relative;
+        margin-left: 20px;
+    }
+    
+    .header .head-img img {
+        margin-top: 30px;
+        position: absolute;
+    }
+    
+    .header ul {
+        float: right;
+        line-height: 70px;
+        margin-right: 50px;
+    }
+    
+    .header ul li {
+        display: inline-block;
+        margin: 0px 10px;
+        padding: 0px 14px;
+        transition: all .5s;
+    }
+    
+    .header ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    
+    .header ul li.active {
+        background-color: #09250dc5;
+    }
+    
+    .header ul li:hover {
+        background-color: #116e1cc5;
+    }
+    
+    .checkbtn {
+        font-size: 17px;
+        color: green;
+        background-color: #fff;
+        padding: 1px 8px;
+        border-radius: 4px;
+        float: right;
+        margin-top: 35px;
+        margin-right: 50px;
+        display: none;
+    }
+    
+    #check {
+        display: none;
+    }
+    
+    @media screen and (max-width: 720px) {
+        .header ul {
+            background-color: rgba(3, 56, 3, 0.781);
+            backdrop-filter: blur(20px);
+            width: 90%;
+            height: 100vh;
+            margin-top: -2px;
+            position: absolute;
+            left: -100%;
+            transition: all .7s;
+            display: block;
+            margin: auto;
+        }
+        .header ul li {
+            display: block;
+            margin: auto;
+            text-align: center;
+            margin: 30px 0px;
+            list-style: none;
+            margin-left: -38px;
+            transition: all .5s;
+        }
+        .header ul li:hover {
+            background-color: black;
+        }
+        .header .head-text {
+            font-size: 20px;
+        }
+        #check:checked~ul {
+            left: 0;
+        }
+        .checkbtn {
+            display: block;
+        }
+        .header .head-img img {
+            height: 40px;
+        }
+    }
+    
+    @media screen and (max-width: 400px) {
+        .header .head-img img {
+            display: none;
+        }
+        .header .head-text {
+            margin-left: 5px;
+        }
+    }
+    
+    .body-bg {
+        background-color: rgba(0, 0, 0, 0.712);
+        padding: 20px 0px;
+        padding-bottom: 70px;
+    }
+    
+    .label h1 {
+        font-family: "Alfa Slab One", serif;
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        font-size: 45px;
+        -webkit-text-stroke-color: white;
+        -webkit-text-stroke-width: 1.4px;
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.40);
+    }
+    
+    .contact-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: white;
+        width: fit-content;
+        margin: auto;
+        padding: 50px 0px;
+        border-radius: 8px;
+    }
+    
+    .contact-image {
+        height: 300px;
+        width: 400px;
+        overflow: hidden;
+        margin: 20px 50px;
+    }
+    
+    .image {
+        width: 100%;
+        display: flex;
+        background-size: cover;
+        animation: slide 14s infinite;
+    }
+    
+    @keyframes slide {
+        0% {
+            transform: translateX(0%);
+        }
+        25% {
+            transform: translateX(0%);
+        }
+        35% {
+            transform: translateX(-100%);
+        }
+        50% {
+            transform: translateX(-100%);
+        }
+        55% {
+            transform: translateX(-200%);
+        }
+        50% {
+            transform: translateX(-100%);
+        }
+        75% {
+            transform: translateX(-200%);
+        }
+        75% {
+            transform: translateX(-200%);
+        }
+        85% {
+            transform: translateX(-300%);
+        }
+        100% {
+            transform: translateX(-300%);
+        }
+    }
+    
+    .contact-hold {
+        margin: 10px 50px;
+    }
+    
+    .contact-hold input,
+    textarea {
+        display: block;
+        margin: auto;
+        font-size: 17px;
+        border: 1px solid rgb(192, 177, 177);
+    }
+    
+    .contact-hold input {
+        padding: 10px;
+        width: 290px;
+        margin: 20px 0px;
+    }
+    
+    .contact-hold textarea,
+    input::placeholder {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+    
+    .contact-hold textarea {
+        padding: 10px;
+        width: 290px;
+        height: 100px;
+    }
+    
+    .contact-hold button {
+        margin-top: 20px;
+        padding: 10px;
+        width: 40%;
+        background-color: darkgreen;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        font-size: 15px;
+    }
+    
+    @media screen and (max-width: 720px) {
+        .label h1 {
+            font-size: 30px;
+            -webkit-text-stroke-color: transparent;
+            color: white;
+            text-shadow: 2px 2px 20px black;
+        }
+        .contact-area {
+            width: 350px;
+        }
+        .contact-area .contact-image {
+            width: 270px;
+        }
+        .contact-hold input {
+            width: 240px;
+        }
+        .contact-hold textarea {
+            width: 238px;
+        }
+    }
+    
+    footer {
+        background-color: darkgreen;
+        padding: 2px 0px;
+    }
+    
+    footer p {
+        color: white;
+        text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.50);
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+
+    <nav class="header">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+        <label class="head-img"><img src="logo.png" height="40px"></label>
+        <label class="head-text">Gray Land Restaurant</label>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="menu.html">Menus</a>
+            </li>
+            <li>
+                <a href="service.html">Services</a>
+            </li>
+            <li>
+                <a href="">About us</a>
+            </li>
+            <li class="active">
+                <a href="contact.html">Contact us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="body-bg">
+        <div class="label">
+            <h1>Contact Us</h1>
+        </div>
+
+
+        <div class="contact-area">
+            <div class="contact-image">
+                <div class="image">
+                    <img src="fade1.png" width="100%">
+                    <img src="fade3.png" width="100%">
+                    <img src="fade1.png" width="100%">
+                    <img src="fade4.png" width="100%">
+                    <img src="fade1.png" width="100%">
+
+                </div>
+            </div>
+
+
+
+            <div class="contact-hold">
+                <h2>Send Us Message </h2>
+                <form>
+                    <input type="text" placeholder="Username">
+                    <input type="text" placeholder="Email Address">
+                    <textarea name="message" id="" placeholder="Type Your Message Here"></textarea>
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <p>Created And Designed By Onyekachi Ebunoha &copy;</p>
+    </footer>
+</body>
+
+</html>
+
+</html>
